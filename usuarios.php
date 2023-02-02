@@ -1,13 +1,9 @@
 <?php
 	include_once 'conexion/conexion.php';
-	// error_reporting(0);
-	session_start();
 	if($_SESSION['Usuarios'] != 'si'){
 		header('location: index.php');
 	}
 	$nombre_usuario = $_SESSION['nombre'];
-	date_default_timezone_set("America/Bogota");
-	setlocale(LC_ALL,"es_ES");
 	$fecha_hoy = date("Y-m-d H:i:s");
 	$mes_hoy = date("m");
 	$fecha_hoy = date("Y-m-d H:i:s");
