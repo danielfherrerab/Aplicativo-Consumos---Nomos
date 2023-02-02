@@ -68,45 +68,42 @@
 								$username = $_POST['correo'];
 								$password = $_POST['clave'];
 								$conexion 			= new Database();
-								$query 		= $conexion->connect()->prepare("SELECT * FROM usuarios WHERE correo = :correo");
-								$query->execute(['correo' =>$username]);
-								$arreglofila = $query->fetch(PDO::FETCH_NUM);
 								
-								if ($arreglofila == true) {
-									$Consumo_planchas 						= $arreglofila[4];
-									$_SESSION['Consumo_planchas'] = $Consumo_planchas;
+									if ($result == true) {
+										$Consumo_planchas 						= $result[4];
+										$_SESSION['Consumo_planchas'] = $Consumo_planchas;
 
-									switch($Consumo_planchas) {
-										case 'si':
-											header('Location: principal.php');		break;
-										case 'no':
-											header('Location: consumo.php');			break;
-										default:
-											echo "no estoy en nada";							break;
+										switch($Consumo_planchas) {
+											case 'si':
+												header('Location: principal.php');		break;
+											case 'no':
+												header('Location: consumo.php');			break;
+											default:
+												echo "no estoy en nada";							break;
+										}
+
+										$id_usuario 								= $result[0];
+										$_SESSION['id_usuario'] 			= $id_usuario;
+										$correo 							= $result[2];
+										$_SESSION['correo'] 	= $correo;
+										$nombre_usuario 							= $result[1];
+										$_SESSION['nombre'] 	= $nombre_usuario;
+										$Ubicaciones 									= $result[5];
+										$_SESSION['Ubicaciones'] 			= $Ubicaciones;
+										$Inventario 									= $result[6];
+										$_SESSION['Inventario'] 			= $Inventario;
+										$informe_consumo 							= $result[7];
+										$_SESSION['informe_consumo'] 	= $informe_consumo;
+										$Usuarios 										= $result[8];
+										$_SESSION['Usuarios'] 				= $Usuarios;
+										$Importar_ordenes 						= $result[9];
+										$_SESSION['Importar_ordenes'] = $Importar_ordenes;
+										$Corte_consumos 							= $result[10];
+										$_SESSION['Corte_consumos'] 	= $Corte_consumos;
 									}
-
-									$id_usuario 								= $arreglofila[0];
-									$_SESSION['id_usuario'] 			= $id_usuario;
-									$correo 							= $arreglofila[2];
-									$_SESSION['correo'] 	= $correo;
-									$nombre_usuario 							= $arreglofila[1];
-									$_SESSION['nombre'] 	= $nombre_usuario;
-									$Ubicaciones 									= $arreglofila[5];
-									$_SESSION['Ubicaciones'] 			= $Ubicaciones;
-									$Inventario 									= $arreglofila[6];
-									$_SESSION['Inventario'] 			= $Inventario;
-									$informe_consumo 							= $arreglofila[7];
-									$_SESSION['informe_consumo'] 	= $informe_consumo;
-									$Usuarios 										= $arreglofila[8];
-									$_SESSION['Usuarios'] 				= $Usuarios;
-									$Importar_ordenes 						= $arreglofila[9];
-									$_SESSION['Importar_ordenes'] = $Importar_ordenes;
-									$Corte_consumos 							= $arreglofila[10];
-									$_SESSION['Corte_consumos'] 	= $Corte_consumos;
-								}
-								else{
-									echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
-								}
+									else{
+										echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
+									}
 							}
 						}  
 						else  {  
