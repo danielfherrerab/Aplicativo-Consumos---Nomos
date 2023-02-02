@@ -31,10 +31,6 @@
 		<!-- js -->
 		<script src="assets/js/jQuery/jquery-3.0.0.min.js"></script>
 
-		<script type="text/javascript" src="assets/datatables/JSZip-2.5.0/jszip.min.js"></script>
-		<script type="text/javascript" src="assets/datatables/js/jquery.dataTables.js"></script>
-		<script type="text/javascript" src="assets/datatables/Buttons-2.3.3/js/dataTables.buttons.min.js"></script>
-		<script type="text/javascript" src="assets/datatables/Buttons-2.3.3/js/buttons.html5.min.js"></script>
 		<script src="assets/js/xlsx.full.min.js"></script>
 		<link rel="shortcut icon" href="assets/imagenes/LOGO.png" />
 
