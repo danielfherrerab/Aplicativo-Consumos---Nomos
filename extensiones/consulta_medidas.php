@@ -8,7 +8,6 @@
 	</thead>
 	<tbody>
 		<?php
-		include_once '../conexion/conexion.php';
 		$medidas = mysqli_query($conexion, "SELECT distinct(medida) from articulos");
 		if(isset($_POST['medida'])){
 			$parametro	= $conexion->real_escape_string($_POST['medida']);
