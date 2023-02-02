@@ -8,7 +8,14 @@
 	</thead>
 	<tbody>
 		<?php
-		include_once '../conexion/conexion.php';
+		$DB_HOST = $_ENV['DB_HOST'];
+		$DB_USER = $_ENV['DB_USER'];
+		$DB_PASSWORD = $_ENV['DB_PASSWORD'];
+		$DB_NAME = $_ENV['DB_NAME'];
+		$DB_PORT = $_ENV['DB_PORT'];
+	
+		$conexion=mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME,$DB_PORT);
+		
 		$medidas = mysqli_query($conexion, "SELECT distinct(medida) from articulos");
 		if(isset($_POST['medida'])){
 			$parametro	= $conexion->real_escape_string($_POST['medida']);
