@@ -71,9 +71,9 @@
 
 										switch($Consumo_planchas) {
 											case 'si':
-												header('Location: principal.php');		break;
+												echo "<script> window.location.href = 'principal.php'; </script>";		break;
 											case 'no':
-												header('Location: consumo.php');			break;
+												echo "<script> window.location.href = 'consumo.php'; </script>";		break;
 											default:
 												echo "no estoy en nada";							break;
 										}
