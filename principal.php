@@ -1,5 +1,8 @@
 <?php
 	include_once 'conexion/conexion.php';
+	if(!$_SESSION){
+		header('location: consumo.php');
+	}
 	if($_SESSION['Consumo_planchas'] != 'si'){
 		header('location: consumo.php');
 	}
