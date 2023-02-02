@@ -25,7 +25,6 @@
 		<link rel="stylesheet" href="assets/css/main.css">
 		
 		<!-- JS -->
-		<script src="assets/js/jquery/jquery.min.js"></script>
 		<script src="assets/js/jQuery/jquery-3.0.0.min.js"></script>
 		<script src="assets/js/peticion2.js"></script>
 		<link rel="shortcut icon" href="assets/imagenes/LOGO.png" />
