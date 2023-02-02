@@ -66,7 +66,7 @@
 						if(password_verify($password, $row["clave"])) {  
 								$username = $_POST['correo'];
 								$password = $_POST['clave'];
-										$Consumo_planchas 						= $result[4];
+										$Consumo_planchas 						= $row[4];
 										$_SESSION['Consumo_planchas'] = $Consumo_planchas;
 
 										switch($Consumo_planchas) {
@@ -78,23 +78,23 @@
 												echo "no estoy en nada";							break;
 										}
 
-										$id_usuario 								= $result[0];
+										$id_usuario 								= $row[0];
 										$_SESSION['id_usuario'] 			= $id_usuario;
-										$correo 							= $result[2];
+										$correo 							= $row[2];
 										$_SESSION['correo'] 	= $correo;
-										$nombre_usuario 							= $result[1];
+										$nombre_usuario 							= $row[1];
 										$_SESSION['nombre'] 	= $nombre_usuario;
-										$Ubicaciones 									= $result[5];
+										$Ubicaciones 									= $row[5];
 										$_SESSION['Ubicaciones'] 			= $Ubicaciones;
-										$Inventario 									= $result[6];
+										$Inventario 									= $row[6];
 										$_SESSION['Inventario'] 			= $Inventario;
-										$informe_consumo 							= $result[7];
+										$informe_consumo 							= $row[7];
 										$_SESSION['informe_consumo'] 	= $informe_consumo;
-										$Usuarios 										= $result[8];
+										$Usuarios 										= $row[8];
 										$_SESSION['Usuarios'] 				= $Usuarios;
-										$Importar_ordenes 						= $result[9];
+										$Importar_ordenes 						= $row[9];
 										$_SESSION['Importar_ordenes'] = $Importar_ordenes;
-										$Corte_consumos 							= $result[10];
+										$Corte_consumos 							= $row[10];
 										$_SESSION['Corte_consumos'] 	= $Corte_consumos;
 
 						}  
