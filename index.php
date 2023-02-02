@@ -64,12 +64,8 @@
 				if(mysqli_num_rows($result) >= 1) {  
 					while($row = mysqli_fetch_array($result)) {  
 						if(password_verify($password, $row["clave"])) {  
-							if (isset($_POST['correo']) && isset($_POST['clave'])) {
 								$username = $_POST['correo'];
 								$password = $_POST['clave'];
-								$conexion 			= new Database();
-								
-									if ($result == true) {
 										$Consumo_planchas 						= $result[4];
 										$_SESSION['Consumo_planchas'] = $Consumo_planchas;
 
@@ -100,11 +96,7 @@
 										$_SESSION['Importar_ordenes'] = $Importar_ordenes;
 										$Corte_consumos 							= $result[10];
 										$_SESSION['Corte_consumos'] 	= $Corte_consumos;
-									}
-									else{
-										echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
-									}
-							}
+
 						}  
 						else  {  
 							echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
