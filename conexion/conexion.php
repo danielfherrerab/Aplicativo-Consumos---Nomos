@@ -8,10 +8,10 @@
 		private $charset;
 
 		public function __construct(){
-				$this->servidorlocal = 'localhost';
-				$this->basededatos 	 = 'consumos';
-				$this->nombre       = 'root';
-				$this->password         = '';
+				$this->servidorlocal = $_ENV['DB_HOST'];
+				$this->basededatos 	 = $_ENV['DB_NAME'];
+				$this->nombre       = $_ENV['DB_USER'];
+				$this->password         = $_ENV['DB_PASSWORD'];
 				$this->charset    = 'utf8';
 		}
 		function connect(){
@@ -28,8 +28,14 @@
 			}
 		}
 	}
-	
-  $conexion=mysqli_connect('localhost','root','','consumos') or die ('problemas en la conexion');
+
+	$DB_HOST = $_ENV['DB_HOST'];
+	$DB_USER = $_ENV['DB_USER'];
+	$DB_PASSWORD = $_ENV['DB_PASSWORD'];
+	$DB_NAME = $_ENV['DB_NAME'];
+	$DB_PORT = $_ENV['DB_PORT'];
+
+  	$conexion=mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME,$DB_PORT);
 
 	date_default_timezone_set("America/Bogota");
 	setlocale(LC_ALL,"es_ES");
