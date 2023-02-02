@@ -66,36 +66,28 @@
 						if(password_verify($password, $row["clave"])) {  
 								$username = $_POST['correo'];
 								$password = $_POST['clave'];
-										$Consumo_planchas 						= $row[4];
-										$_SESSION['Consumo_planchas'] = $Consumo_planchas;
+								$Consumo_planchas 						= $row[4];
+								$_SESSION['Consumo_planchas'] = $Consumo_planchas;
 
-										switch($Consumo_planchas) {
-											case 'si':
-												echo "<script> window.location.href = 'principal.php'; </script>";		break;
-											case 'no':
-												echo "<script> window.location.href = 'consumo.php'; </script>";		break;
-											default:
-												echo "no estoy en nada";							break;
-										}
+								switch($Consumo_planchas) {
+									case 'si':
+										echo "<script> window.location.href = 'principal.php'; </script>";		break;
+									case 'no':
+										echo "<script> window.location.href = 'consumo.php'; </script>";		break;
+									default:
+										echo "no estoy en nada";							break;
+								}
 
-										$id_usuario 								= $row[0];
-										$_SESSION['id_usuario'] 			= $id_usuario;
-										$correo 							= $row[2];
-										$_SESSION['correo'] 	= $correo;
-										$nombre_usuario 							= $row[1];
-										$_SESSION['nombre'] 	= $nombre_usuario;
-										$Ubicaciones 									= $row[5];
-										$_SESSION['Ubicaciones'] 			= $Ubicaciones;
-										$Inventario 									= $row[6];
-										$_SESSION['Inventario'] 			= $Inventario;
-										$informe_consumo 							= $row[7];
-										$_SESSION['informe_consumo'] 	= $informe_consumo;
-										$Usuarios 										= $row[8];
-										$_SESSION['Usuarios'] 				= $Usuarios;
-										$Importar_ordenes 						= $row[9];
-										$_SESSION['Importar_ordenes'] = $Importar_ordenes;
-										$Corte_consumos 							= $row[10];
-										$_SESSION['Corte_consumos'] 	= $Corte_consumos;
+								
+								$_SESSION['id_usuario'] = $row[0];
+								$_SESSION['correo'] 	= $row[2];
+								$_SESSION['nombre'] 	= $row[1];
+								$_SESSION['Ubicaciones'] 		= $row[5];
+								$_SESSION['Inventario'] 		= $row[6];
+								$_SESSION['informe_consumo'] 	= $row[7];
+								$_SESSION['Usuarios'] 			= $row[8];
+								$_SESSION['Importar_ordenes'] 	= $row[9];
+								$_SESSION['Corte_consumos'] 	= $row[10];
 
 						}  
 						else  {  
