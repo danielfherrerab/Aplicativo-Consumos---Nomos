@@ -15,6 +15,9 @@
 		$DB_PORT = $_ENV['DB_PORT'];
 	
 		$conexion=mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME,$DB_PORT);
+		$date = new DateTime('now');
+		$date->modify('last day of this month');
+		
 		$solo_fecha = date('Y-m-01 00:00:00');
 		$fecha_final =  $date->format('Y-m-d 23:59:59');
 		
