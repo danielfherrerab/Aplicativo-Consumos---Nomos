@@ -245,7 +245,6 @@
 							url : 'recibir_excel/recibir.php', 
 							type : 'POST', 
 							data: formData,
-							async: false,
 							success: function (data) {
 
 								if(data == 1){

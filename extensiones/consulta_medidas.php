@@ -17,7 +17,7 @@
 		$conexion=mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME,$DB_PORT);
 		$date = new DateTime('now');
 		$date->modify('last day of this month');
-		
+
 		$solo_fecha = date('Y-m-01 00:00:00');
 		$fecha_final =  $date->format('Y-m-d 23:59:59');
 		
@@ -29,7 +29,7 @@
 		$total = 0;
 		if(mysqli_num_rows($medidas) >= 1){
 			while($refe = mysqli_fetch_array($medidas)){
-				$consumos = mysqli_query($conexion, "SELECT sum(cantidad) as cantidad,medida from consumo_planchas as consumo inner join articulos on articulos.id_articulo = consumo.id_articulo where medida like '%$refe[medida]%' and  (fecha_consumo between '$solo_fecha' and '$fecha_final') GROUP BY id_consumo,numero_op, nombre_trabajo, descripcion, fecha_consumo, observacion");
+				$consumos = mysqli_query($conexion, "SELECT sum(cantidad) as cantidad,medida from consumo_planchas as consumo inner join articulos on articulos.id_articulo = consumo.id_articulo where medida like '%$refe[medida]%' and  (fecha_consumo between '$solo_fecha' and '$fecha_final') GROUP BY id_consumo");
 				while($recorrer = mysqli_fetch_array($consumos)){
 					echo "<tr><td>$recorrer[medida]</td><td>$recorrer[cantidad]</td></td></tr>";
 					$total = $total + $recorrer["cantidad"];
