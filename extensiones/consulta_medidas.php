@@ -16,7 +16,7 @@
 	
 		$conexion=mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME,$DB_PORT);
 		$solo_fecha = date('Y-m-01 00:00:00');
-		$fecha_final =  $date->format('Y-m-d');
+		$fecha_final =  $date->format('Y-m-d 23:59:59');
 		
 		$medidas = mysqli_query($conexion, "SELECT distinct(medida) as medida from articulos ");
 		if(isset($_POST['medida'])){
