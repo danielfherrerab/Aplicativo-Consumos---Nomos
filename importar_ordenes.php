@@ -21,7 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="assets/dataTables/css/dataTables.dataTables.css"/>
 		<link rel="stylesheet" href="assets/dataTables/css/jquery.dataTables.css">
 		<!-- js -->
-		<script src="assets/js/jQuery/jquery-3.0.0.min.js"></script>
+		<script src="assets/js/jQuery/jquery-1.10.2.js"></script>
 		<script src="assets/dataTables/js/jquery.dataTables.js"></script>
 		<link rel="shortcut icon" href="assets/imagenes/LOGO.png" />
 		<title>Ordenes - NOMOS</title>
