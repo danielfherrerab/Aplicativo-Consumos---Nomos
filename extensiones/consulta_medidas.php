@@ -15,7 +15,8 @@
 		$DB_PORT = $_ENV['DB_PORT'];
 	
 		$conexion=mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME,$DB_PORT);
-
+		$solo_fecha = date('Y-m-01 00:00:00');
+		
 		$medidas = mysqli_query($conexion, "SELECT distinct(medida) from articulos");
 		if(isset($_POST['medida'])){
 			$parametro	= $conexion->real_escape_string($_POST['medida']);
