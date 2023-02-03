@@ -1,5 +1,6 @@
 <?php
 	include_once 'conexion/conexion.php';
+	session_start();
 	if($_SESSION['Usuarios'] != 'si'){
 		header('location: index.php');
 	}

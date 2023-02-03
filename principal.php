@@ -1,5 +1,6 @@
 <?php
 	include_once 'conexion/conexion.php';
+	session_start();
 	if(!$_SESSION){
 		header('location: consumo.php');
 	}

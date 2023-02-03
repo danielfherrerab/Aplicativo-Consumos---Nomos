@@ -1,5 +1,6 @@
 <?php
 	include_once 'conexion/conexion.php';
+	session_start();
 	if($_SESSION['Corte_consumos'] != 'si'){
 		header('location: index.php');
 	}

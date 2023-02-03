@@ -1,5 +1,6 @@
 <?php
 	include_once 'conexion/conexion.php';
+	session_start();
 	$dia = date('Y-m-01 H:i:s');
 	$fecha = date("Y-m-d H:i:s");
 	
