@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="assets/css/mostrar-tabla.css">
 
 		<!-- JS -->
-		<script src="assets/js/jquery/jquery.min.js"></script>
+		<script src="assets/js/jQuery/jquery-3.0.0.min.js"></script>
 		<link rel="shortcut icon" href="assets/imagenes/LOGO.png" />
 		<title>Corte - NOMOS</title>
 	</head>
