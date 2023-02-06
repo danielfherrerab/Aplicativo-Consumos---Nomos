@@ -27,6 +27,9 @@
       if($row[2] != ""){
         $row[2] = date("Y-m-d", strtotime($row[2]));
       }
+      else{
+        $row[2] = "0000-00-00";
+      }
 
       $duplicados = mysqli_query($conexion,"SELECT * FROM ordenes WHERE numero_op = '$row[0]'");
       /* EN CASO DE QUE HAYA DUPLICADO */
@@ -39,7 +42,7 @@
           $insertarData   = mysqli_query($conexion,"INSERT INTO ordenes VALUES('$row[0]','$row[1]','$row[2]','$row[3]','$row[4]','$row[5]')");
           // $ingreso_ordenes++;
         }
-      // echo $row[0] . " <br>";
+      echo $row[0] . " <br>";
     }
     $i++;
   }
