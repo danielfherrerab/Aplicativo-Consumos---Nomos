@@ -28,7 +28,7 @@
         $row[2] = date("Y-m-d", strtotime($row[2]));
       }
 
-      $duplicados = mysqli_query($conexion,"SELECT * FROM Ordenes WHERE numero_op = '$row[0]'");
+      $duplicados = mysqli_query($conexion,"SELECT * FROM ordenes WHERE numero_op = '$row[0]'");
       /* EN CASO DE QUE HAYA DUPLICADO */
 
         if(mysqli_num_rows($duplicados) > 0 ) { 
