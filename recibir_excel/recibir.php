@@ -7,7 +7,7 @@
 
   $nombre = $_FILES['dataCliente']['name'];
 
-  $destino = $nombre;
+  $destino = "/convertir_excel";
 
   copy($_FILES['dataCliente']['tmp_name'],$destino);
   // Leer el archivo de Excel
