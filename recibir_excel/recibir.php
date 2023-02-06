@@ -17,7 +17,7 @@
   $worksheet = $spreadsheet->getActiveSheet();
 
   // Obtener los datos de la hoja de cálculo en una matriz
-  $data = $worksheet->toArray();
+  $data = $worksheet->toArray(null,true,true,true);
 
   $i = 0;
   // Recorrer la matriz y hacer algo con los datos
