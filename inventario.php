@@ -143,7 +143,7 @@
                     }
               ?>
               <td nowrap="2">
-                <img src="assets/imagenes/<?php echo $estado; ?>.png" alt="" width="20px" style="margin-bottom: -5px;">
+                <!-- <img src="assets/imagenes/<?php echo $estado; ?>.png" alt="" width="20px" style="margin-bottom: -5px;"> -->
                 <a href='inventario.php?<?php echo $estado."=".$id; ?>'><button><?php echo $estados[$estado]; ?></button></a>
               </td>
             </tr>
