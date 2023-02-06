@@ -21,30 +21,32 @@
 
   $i = 0;
   // Recorrer la matriz y hacer algo con los datos
-  foreach ($data as $row) {
-    if($i != 0){
+  if($data) {
+    foreach ($data as $row) {
+      if($i != 0){
 
-      if($row[2] != ""){
-        $row[2] = date("Y-m-d", strtotime($row[2]));
-      }
-      else{
-        $row[2] = "0000-00-00";
-      }
-
-      $duplicados = mysqli_query($conexion,"SELECT * FROM ordenes WHERE numero_op = '$row[0]'");
-      /* EN CASO DE QUE HAYA DUPLICADO */
-
-        if(mysqli_num_rows($duplicados) > 0 ) { 
-            $insertarRepetidas = mysqli_query($conexion,"INSERT INTO ordenes_duplicadas VALUES('$row[0]','$row[1]','$row[2]','$row[3]','$row[4]','$row[5]')");
-            $actualizados++;
-        } 
-        else{
-          $insertarData   = mysqli_query($conexion,"INSERT INTO ordenes VALUES('$row[0]','$row[1]','$row[2]','$row[3]','$row[4]','$row[5]')");
-          // $ingreso_ordenes++;
+        if($row[2] != ""){
+          $row[2] = date("Y-m-d", strtotime($row[2]));
         }
-      echo $row[0] . " <br>";
+        else{
+          $row[2] = "0000-00-00";
+        }
+
+        $duplicados = mysqli_query($conexion,"SELECT * FROM ordenes WHERE numero_op = '$row[0]'");
+        /* EN CASO DE QUE HAYA DUPLICADO */
+
+          if(mysqli_num_rows($duplicados) > 0 ) { 
+              $insertarRepetidas = mysqli_query($conexion,"INSERT INTO ordenes_duplicadas VALUES('$row[0]','$row[1]','$row[2]','$row[3]','$row[4]','$row[5]')");
+              $actualizados++;
+          } 
+          else{
+            $insertarData   = mysqli_query($conexion,"INSERT INTO ordenes VALUES('$row[0]','$row[1]','$row[2]','$row[3]','$row[4]','$row[5]')");
+            // $ingreso_ordenes++;
+          }
+        echo $row[0] . " <br>";
+      }
+      $i++;
     }
-    $i++;
   }
   if($i >= 1){
     echo true;
