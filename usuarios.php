@@ -271,7 +271,7 @@
         var importar_ordenes = document.getElementById("importar_ordenes"+id).value;
         var corte_consumos = document.getElementById("corte_consumos"+id).value;
 
-        if(consumo_planchas == "si"){("inpu[type=checkbox]").eq(7).prop("checked",true);}
+        if(consumo_planchas == "si"){$("inpu[type=checkbox]").eq(7).prop("checked",true);}
         if(ubicaciones == "si"){$("input[type=checkbox]").eq(8).prop("checked",true);}
         if(inventario == "si"){$("input[type=checkbox]").eq(9).prop("checked",true);}
         if(informe_consumo == "si"){$("input[type=checkbox]").eq(10).prop("checked",true);}
