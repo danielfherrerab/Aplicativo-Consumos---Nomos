@@ -402,10 +402,6 @@
 			}
 
 			$(document).ready(function(){
-				$('#exportar').DataTable({
-					language: {"lengthMenu": "Mostrar _MENU_ registros","zeroRecords": "no se encontraron resultados","info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros","infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros","infoFiltered": "(filtrado de un total de _MAX_ registros)","sSearch": "Buscar:", "oPaginate": {"sFirst": "Pirmero", "sLast": "Ultimo", "sNext": "Siguiente","sPrevious": "Anterior",},"sProcessing": "Procesando...",}, responsive: "true",dom: 'Bfrtilp', buttons:[{ extend: 'excelHtml5', text: ' Exportar informe', tittleAttr: 'Exportar a excel', className: 'btn btn-success' }]
-				})
-
 				$(".contenedor_mayor").toggleClass("collapse");
 				$(".hamburger").click(function(){
 						$(".contenedor_mayor").toggleClass("collapse");
