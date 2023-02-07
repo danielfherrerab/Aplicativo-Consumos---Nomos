@@ -35,14 +35,14 @@
     opendir($carpeta);
     $nombre = $fecha_imagen.'-'.$_FILES['dataCliente']['name'];
     $destino = $carpeta.$nombre;
-    copy($_FILES['dataCliente']['tmp_name'],$destino);
+
     require 'convertir_excel/vendor/autoload.php';
     
     $ingreso_ordenes = 0;$total = 0;$actualizados = 0;$sin_subir = 0;
     use PhpOffice\PhpSpreadsheet\IOFactory;
     use PhpOffice\PhpSpreadsheet\Shared\Date;
 
-    $nombreArchivo  = $nombre;
+    $nombreArchivo  = 'BD OP.xlsx';
     $documento      = IOFactory::load($nombreArchivo);
     $hojaActual     = $documento  -> getSheet(0);
     $numeroFilas    = $hojaActual -> getHighestDataRow();
