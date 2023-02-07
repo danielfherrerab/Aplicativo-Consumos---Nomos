@@ -1,3 +1,15 @@
+<?php
+	include_once 'conexion/conexion.php';
+	session_start();
+	if(!$_SESSION){
+	header('location: index.php');
+	}
+	if(!isset($_SESSION['correo'])){
+		header('location: index.php');
+	}
+	
+	$correo_usuario = $_SESSION['correo'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -8,14 +20,6 @@
 		<link rel="stylesheet" href="assets/css/main.css">
 		<link rel="shortcut icon" href="assets/imagenes/LOGO.png" />
 		<title>Cambiar contraseña - NOMOS</title>
-		<?php
-		  session_start();
-			if(!isset($_SESSION['correo'])){
-				header('location: index.php');
-			}
-			include_once 'conexion/conexion.php';
-			$correo_usuario = $_SESSION['correo'];
-		?>
 	</head>
 	<body>
 	<div class="logo_superior"></div>
