@@ -1,3 +1,16 @@
+<?php
+	include_once 'conexion/conexion.php';
+	session_start();
+	if($_SESSION['Importar_ordenes'] != 'si'){
+		header('location: usuarios.php');
+	}
+	$nombre_usuario = $_SESSION['nombre'];
+	$result = "SELECT COUNT(*) as total_ordenes FROM ordenes";
+	$NUM_ITEMS_BY_PAGE = 15;
+	$resultado = $conexion->query($result);
+	$row = $resultado -> fetch_assoc();
+	$num_total_rows = $row['total_ordenes'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -12,21 +25,6 @@
 		<script src="assets/dataTables/js/jquery.dataTables.js"></script>
 		<link rel="shortcut icon" href="assets/imagenes/LOGO.png" />
 		<title>Ordenes - NOMOS</title>
-
-    <?php
-			include_once 'conexion/conexion.php';
-			session_start();
-			if($_SESSION['Importar_ordenes'] != 'si'){
-				header('location: usuarios.php');
-			}
-			$nombre_usuario = $_SESSION['nombre'];
-      $result = "SELECT COUNT(*) as total_ordenes FROM ordenes";
-			$NUM_ITEMS_BY_PAGE = 15;
-			$resultado = $conexion->query($result);
-			$row = $resultado -> fetch_assoc();
-			$num_total_rows 			= $row['total_ordenes'];
-		?>
-
   </head>
 	<body>
 	<div class="contenedor_mayor">
