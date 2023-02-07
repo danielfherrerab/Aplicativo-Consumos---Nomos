@@ -83,7 +83,7 @@
             Usuarios en el sistema
           </header>
 
-          <div class="contenedor_tablas">
+          <div class="contenedor_tablas" style="display: block;">
             <table id="tabla_usuarios" cellspacing = '5' border='0'>
               <thead>
                 <tr>
