@@ -133,7 +133,7 @@
 						<tr><td>Cantidad:		</td><td><input type="text" 	name="confirmacant" 	value="" readonly></td></tr>
 						<tr><td>Descripcion:</td><td><input type="text" 	name="confirmadesc" 	value="" readonly></td></tr>
 						<tr><td>Observacion:</td><td><input type="text" 	name="confirmaobser" 	value="" minlength="5" required ></td></tr>
-						<tr><td style="text-align:center"><input type="submit" value="Confirmar" id="confirmar_consumo" class="confirmar"></td><td style="text-align:right"><a href="javascript:history.back()">Cancelar</a></td></tr>
+						<tr><td style="text-align:center"><input type="submit" value="Confirmar" id="confirmar_consumo" class="confirmar"></td><td style="text-align:right"><a href="principal.php">Cancelar</a></td></tr>
 					</table>
 				</div>
 
