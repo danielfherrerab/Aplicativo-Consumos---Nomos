@@ -1,6 +1,9 @@
 <?php
 	include_once 'conexion/conexion.php';
 	session_start();
+	if(!$_SESSION){
+		header('location: usuarios.php');
+	}
 	if($_SESSION['Importar_ordenes'] != 'si'){
 		header('location: usuarios.php');
 	}

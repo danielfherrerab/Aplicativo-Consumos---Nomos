@@ -1,6 +1,9 @@
 <?php
   include_once 'conexion/conexion.php';
   session_start();
+  if(!$_SESSION){
+		header('location: importar_ordenes.php');
+	}
   if($_SESSION['Inventario'] != 'si'){
     header('location: importar_ordenes.php');
   }

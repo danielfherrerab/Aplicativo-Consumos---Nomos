@@ -2,6 +2,9 @@
   include_once 'conexion/conexion.php';
   // error_reporting(0);
   session_start();
+  if(!$_SESSION){
+		header('location: corte_consumos.php');
+	}
   if($_SESSION['Usuarios'] != 'si'){
     header('location: index.php');
   }

@@ -1,6 +1,9 @@
 <?php
 	include_once 'conexion/conexion.php';
 	session_start();
+	if(!$_SESSION){
+		header('location: inventario.php');
+	}
 	if($_SESSION['Inventario'] != 'si'){
 		header('location: inventario.php');
 	}
