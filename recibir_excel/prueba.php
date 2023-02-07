@@ -14,7 +14,13 @@
         echo '<a href="importar_ordenes.php">VOLVER AL INICIO</a>';
       }
 
-    $conexion = mysqli_connect('localhost','root','','bd_consumos') or die ('problemas en la conexion');$conexion=mysqli_connect('localhost','root','','bd_consumos') or die ('problemas en la conexion');
+    	$DB_HOST = $_ENV['DB_HOST'];
+	$DB_USER = $_ENV['DB_USER'];
+	$DB_PASSWORD = $_ENV['DB_PASSWORD'];
+	$DB_NAME = $_ENV['DB_NAME'];
+	$DB_PORT = $_ENV['DB_PORT'];
+
+  	$conexion=mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME,$DB_PORT);
     $nombre = $_FILES['dataCliente']['name'];
     // echo "<script> var a = '$nombre'; alert('aaa'+a); </script>";
     date_default_timezone_set("America/Bogota");

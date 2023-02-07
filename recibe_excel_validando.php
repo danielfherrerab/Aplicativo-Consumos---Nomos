@@ -1,5 +1,6 @@
 <?php
 include 'conexion/conexion.php';
+
 $tipo       = $_FILES['dataCliente']['type'];
 $tamanio    = $_FILES['dataCliente']['size'];
 $archivotmp = $_FILES['dataCliente']['tmp_name'];
