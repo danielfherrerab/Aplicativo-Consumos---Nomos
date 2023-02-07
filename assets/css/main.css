@@ -308,7 +308,7 @@ fieldset input[type="submit"]:hover{
   border-bottom-left-radius: 10px;
   transition: all 0.3s ease;
   display: initial;
-  z-index: 9999;
+  z-index: 150;
 }
 
 .contenedor_mayor .nav_lateral ul li a{
@@ -360,7 +360,7 @@ fieldset input[type="submit"]:hover{
   padding: 25px 10px;
   transition: all 0.3s ease;
   max-width: 100%;
-    overflow: auto;
+  overflow: auto;
 }
 
 .contenedor_mayor .main_container .item{
@@ -682,35 +682,46 @@ position: relative;
 
 
 .pag_usuarios {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-
-  grid-template-areas: "total_usuarios agregar_usuario"
-                      "total_usuarios agregar_usuario";
+  width: (100% - 200px);
+  margin-top: 70px;
+  margin-left: 0px;
+  padding: 25px 10px;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  overflow: auto;
 }
-.pag_usuarios .total_usuarios {
-  grid-area: total_usuarios;
+.agregar_usuario {
+  width: 90%;
+  max-width: 800px;
+  background-color: #e5e5e5;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 2px;
 }
-.pag_usuarios .agregar_usuario {
-  display: inline-block;
-  grid-area: agregar_usuario;
-}
-.pag_usuarios .modificar_usuario {
-  min-width: 200px;
-  display: none;
-  grid-area: modificar_usuario;
-}
-.total_usuarios, .agregar_usuario, .modificar_usuario{
-  background-color: #dcdcdccc;
+.total_usuarios{
+  background-color: #dcdcdc;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px,rgb(0 0 0 / 9%) 0px 2px 1px, rgb(0 0 0 / 45%) 0px 4px 2px, rgb(0 0 0 / 45%) 0px 8px 4px, rgb(0 0 0 / 45%) 0px 16px 8px, rgb(0 0 0 / 45%) 0px 32px 16px;
 }
-.pag_usuarios .agregar_usuario input, .pag_usuarios .modificar_usuario input{
+.display_usuario{
+  background-color: #e6ffd3db;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: 2s;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  animation: hidde 1s ease 1s 1 normal forwards;
+}
+.pag_usuarios .display_usuario input, .pag_usuarios .modificar_usuario input{
   padding: 5px 0;
   width: 60%;
 }
-.pag_usuarios .agregar_usuario input[type="radio"], .pag_usuarios .modificar_usuario input[type="radio"]{
+.pag_usuarios .display_usuario input[type="radio"], .pag_usuarios .modificar_usuario input[type="radio"]{
   width: 30px;
 }
 .pag_usuarios .contenedor_modificador {
@@ -726,24 +737,75 @@ position: relative;
   display: flex;
   flex-direction: column;
 }
-.pag_usuarios .agregar_usuario table{
+.pag_usuarios .display_usuario table{
   display: flex;
   justify-content: center;
 }
-
-.mod_usuario {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-
-  grid-template-areas: "total_usuarios modificar_usuario"
-                      "agregar_usuario modificar_usuario";
-}
-.mod_usuario .modificar_usuario {
+.agregar_usuario .info{
   display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+.agregar_usuario .password {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: stretch;
 }
 
+.agregar_usuario .contenido .display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-content: stretch;
+  margin-bottom: 20px;
+}
+
+.show_usuario {
+  animation: Show 2s ease 0s 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@keyframes Show {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+	15% {
+		transform: translateX(-30px) rotate(6deg);
+	}
+	30% {
+		transform: translateX(15px) rotate(-6deg);
+	}
+	45% {
+		transform: translateX(-15px) rotate(3.6deg);
+	}
+	60% {
+		transform: translateX(9px) rotate(-2.4deg);
+	}
+	75% {
+		transform: translateX(-6px) rotate(1.2deg);
+	}
+}
+
+@keyframes hidde {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
 /* PARA TABLA CONSULTA PRINCIPAL*/
 .consumo_tabla .cerrar{
   margin-top: 10px;
@@ -980,14 +1042,14 @@ table tbody tr:nth-of-type(odd) {
   .checkbox .tgl + .tgl-btn {
     outline: 0;
     display: block;
-    width: 4.5em;
+    width: 150px;
     height: 2em;
     position: relative;
     cursor: pointer;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   .checkbox .tgl + .tgl-btn:after,
   .checkbox .tgl + .tgl-btn:before {
