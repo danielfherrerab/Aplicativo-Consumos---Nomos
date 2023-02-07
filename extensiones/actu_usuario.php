@@ -188,7 +188,7 @@ if(isset($_POST['modificar'])){
       .done(function(response) {
         $(".display_usuario").removeClass("show_usuario");
         alert("Usuario agregado correctamente");
-        window.location.href = 'prueba.php';
+        window.location.href = 'usuarios.php';
       });
     }
   }
@@ -225,7 +225,7 @@ if(isset($_POST['modificar'])){
       .done(function(response) {
         $(".display_usuario").removeClass("show_usuario");
         alert("Usuario modificado correctamente");
-        window.location.href = 'prueba.php';
+        window.location.href = 'usuarios.php';
       });
     }
   }
