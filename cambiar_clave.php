@@ -64,17 +64,17 @@
 			</fieldset>
 
 			<?php
-									}
-									else {
-										echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
-									}
 								}
-							}  
-							else {  
-								echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
-							}  
+								else {
+									echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
+								}
+							}
 						}  
-					}
+						else {  
+							echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
+						}  
+					}  
+				}
 
 				if(isset($_POST['confirmacion'])) {
 					$nueva_clave 		= $_POST['nueva_clave'];
