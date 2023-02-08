@@ -45,7 +45,7 @@
 					if(isset($_POST['Correo_Usuario']) && isset($_POST['Clave_Usuario'])) {
 						$username = mysqli_real_escape_string($conexion, $_POST["Correo_Usuario"]);  
 						$password = mysqli_real_escape_string($conexion, $_POST["Clave_Usuario"]);  
-						$query  = "SELECT * FROM Usuarios WHERE correo = '$username'";  
+						$query  = "SELECT * FROM usuarios WHERE correo = '$username'";  
 						$result = mysqli_query($conexion, $query); 
 
 						if(mysqli_num_rows($result) >= 1) {  
@@ -55,7 +55,7 @@
 										$username = $_POST['Correo_Usuario'];
 										$password = $_POST['Clave_Usuario'];
 										$db 			= new Database();
-										$query 		= $db->connect()->prepare("SELECT *FROM usuarios WHERE correo = :correo");
+										$query 			= $db->connect()->prepare("SELECT *FROM usuarios WHERE correo = :correo");
 										$query 		-> execute(['correo' =>$username]);
 										$arreglofila = $query->fetch(PDO::FETCH_NUM);
 										
