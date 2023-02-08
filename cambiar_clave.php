@@ -26,7 +26,7 @@
 	<div class="inicio_sesion">
 			<h1>CAMBIO DE CONTRASEÑA</h1>
 
-			<?php if(!isset($_POST['recuperar_clave'])){ ?>
+			<?php if(isset($_POST['cambiar_clave'])){ ?>
 			<fieldset>
 				<form action="#" method="post">
 				<h4>Ingrese la informacion de su cuenta</h4>
