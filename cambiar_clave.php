@@ -21,9 +21,10 @@
 		<link rel="shortcut icon" href="assets/imagenes/LOGO.png" />
 		<title>Cambiar contraseña - NOMOS</title>
 	</head>
+
 	<body>
-	<div class="logo_superior"></div>
-	<div class="inicio_sesion">
+		<div class="logo_superior"></div>
+		<div class="inicio_sesion">
 			<h1>CAMBIO DE CONTRASEÑA</h1>
 
 			<?php if(isset($_POST['cambiar_clave'])){ ?>
@@ -69,7 +70,7 @@
 					<input type="password" placeholder="Ingrese su nueva contraseña" name="nueva_clave" required>
 					<h3>Confirme su nueva contraseña</h3>
 					<input type="password" placeholder="Repita su contraseña" 			 name="confirma_clave" required><br>
-					<input type="submit" 	 value="CAMBIAR CLAVE" name="cambiar_clave">
+					<input type="submit" 	 value="CAMBIAR CLAVE" name="confirmacion">
 				</form>
 			</fieldset>
 
@@ -90,7 +91,7 @@
 						} 
 					}
 				}
-				if(isset($_POST['cambiar_clave'])) {
+				if(isset($_POST['confirmacion'])) {
 					$nueva_clave 		= $_POST['nueva_clave'];
 					$confirma_clave = $_POST['confirma_clave'];
 
