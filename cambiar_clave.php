@@ -51,17 +51,8 @@
 						if(mysqli_num_rows($result) >= 1) {  
 							while($row = mysqli_fetch_array($result)) {  
 								if(password_verify($password, $row["clave"])) {  
-									if (isset($_POST['Correo_Usuario']) && isset($_POST['Clave_Usuario'])) {
-										$username = $_POST['Correo_Usuario'];
-										$password = $_POST['Clave_Usuario'];
-										$db 			= new Database();
-										$query 			= $db->connect()->prepare("SELECT *FROM usuarios WHERE correo = :correo");
-										$query 		-> execute(['correo' =>$username]);
-										$arreglofila = $query->fetch(PDO::FETCH_NUM);
-										
-										if ($arreglofila == true) {
-											$Consumo_planchas 						= $arreglofila[4];
-											$_SESSION['Consumo_planchas'] = $Consumo_planchas;
+									$username = $_POST['correo'];
+									$password = $_POST['clave'];
 			?>
 
 			<fieldset>
@@ -75,22 +66,18 @@
 			</fieldset>
 
 			<?php
-										}
-										else {
-											echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
-										}
 									}
-								}  
-								else {  
-									echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
-								}  
+									else {
+										echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
+									}
+								}
+							}  
+							else {  
+								echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
 							}  
 						}  
-						else  {  
-							echo "<div class='mensaje'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>"; 
-						} 
 					}
-				}
+
 				if(isset($_POST['confirmacion'])) {
 					$nueva_clave 		= $_POST['nueva_clave'];
 					$confirma_clave = $_POST['confirma_clave'];
