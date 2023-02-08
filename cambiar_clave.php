@@ -51,8 +51,6 @@
 						if(mysqli_num_rows($result) >= 1) {  
 							while($row = mysqli_fetch_array($result)) {  
 								if(password_verify($password, $row["clave"])) {  
-									$username = $_POST['correo'];
-									$password = $_POST['clave'];
 			?>
 
 			<fieldset>
