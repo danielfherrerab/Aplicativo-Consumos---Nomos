@@ -1257,8 +1257,12 @@ table tbody tr:nth-of-type(odd) {
   .acordeon tbody .Detalles {
     background-color: #deffe4;
   }
+
+  .acordeon .General:nth-of-type(odd) {
+    background-color: #d8d8d8e9;
+  }
   
-  .acordeon .general:hover {
+  .acordeon .General:hover {
     background-color: #ddd;
   
   }
@@ -1276,13 +1280,9 @@ table tbody tr:nth-of-type(odd) {
     display:none;
   }
   
-  .acordeon .general {
+  .acordeon .General {
     background-color: #eaeaeae9;
   }
-  .acordeon .general td {
-    text-align: center;
-  }
-
 
 
   /* SELECTOR DE CORTE DE MES */
