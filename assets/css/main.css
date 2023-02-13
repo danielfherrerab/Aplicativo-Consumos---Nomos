@@ -1209,8 +1209,7 @@ table tbody tr:nth-of-type(odd) {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
 	}
 
   #descripcion_articulos {
