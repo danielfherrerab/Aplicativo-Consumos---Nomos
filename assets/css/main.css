@@ -1255,7 +1255,7 @@ table tbody tr:nth-of-type(odd) {
     text-align: left;
   }
   
-  .acordeon tr:nth-child(even) {
+  .acordeon tbody .Detalles {
     background-color: #deffe4;
   }
   
