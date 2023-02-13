@@ -24,7 +24,7 @@
 		$medidas = mysqli_query($conexion, "SELECT medida from articulos group by medida");
 		if(isset($_POST['medida'])){
 			$parametro	= $conexion->real_escape_string($_POST['medida']);
-			$medidas    = mysqli_query($conexion, "SELECT medida from articulos where medida like '%$parametro%'");
+			$medidas    = mysqli_query($conexion, "SELECT medida from articulos where medida like '%$parametro%' group by medida");
 		}
 		$total = 0;
 		if(mysqli_num_rows($medidas) >= 1){

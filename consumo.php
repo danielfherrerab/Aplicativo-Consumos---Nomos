@@ -238,7 +238,7 @@
 							$a = 0;
 								$ordenes = mysqli_query($conexion,"SELECT numero_op from consumo_planchas where (fecha_consumo between '$dia' and '$datetime_final') group by numero_op");
 								while($linea = mysqli_fetch_array($ordenes)) {
-									$consumos = mysqli_query($conexion, "SELECT id_consumo, ordenes.numero_op as op, nombre_trabajo, descripcion, fecha_consumo, observacion, SUM(cantidad) as cantidad FROM consumo_planchas INNER JOIN ordenes ON ordenes.numero_op = consumo_planchas.numero_op WHERE ordenes.numero_op = '$linea[numero_op]' AND (fecha_consumo BETWEEN '$dia' AND '$datetime_final') GROUP BY id_consumo, ordenes.numero_op, nombre_trabajo, descripcion, fecha_consumo, observacion ORDER BY id_consumo DESC");
+									$consumos = mysqli_query($conexion, "SELECT id_consumo, ordenes.numero_op as op, nombre_trabajo, descripcion, fecha_consumo, observacion, SUM(cantidad) as cantidad FROM consumo_planchas INNER JOIN ordenes ON ordenes.numero_op = consumo_planchas.numero_op WHERE ordenes.numero_op = '$linea[numero_op]' AND (fecha_consumo BETWEEN '$dia' AND '$datetime_final') GROUP BY ordenes.numero_op ORDER BY id_consumo DESC");
 									$cant_total = 0;
 									while($recorrer = mysqli_fetch_array($consumos)){
 										$recor[$a] = $linea["numero_op"];$a++;
@@ -254,13 +254,13 @@
 							</tr>
 
 							<?php 
-							$registros = mysqli_query($conexion, "SELECT id_consumo,nombre,ordenes.numero_op,nombre_trabajo,descripcion,fecha_consumo,observacion,cantidad from consumo_planchas inner join usuarios on usuarios.id_usuario = consumo_planchas.id_usuario inner join ordenes on ordenes.numero_op = consumo_planchas.numero_op where ordenes.numero_op = '$recorrer[op]' and (fecha_consumo between '$dia' and '$datetime_final') order by id_consumo desc");
-							while($datos = mysqli_fetch_array($registros)) {
-								$fecha_consumo = $datos['fecha_consumo'];
-								$mes_consumo 			= date("m",strtotime($fecha_consumo));
-								$dia_consumo 			= date("d",strtotime($fecha_consumo));
-								$year_consumo 			= date("Y",strtotime($fecha_consumo));
-								$hora_consumo 			= date("H:i:s",strtotime($fecha_consumo));
+									$registros = mysqli_query($conexion, "SELECT id_consumo,nombre,ordenes.numero_op,nombre_trabajo,descripcion,fecha_consumo,observacion,cantidad from consumo_planchas inner join usuarios on usuarios.id_usuario = consumo_planchas.id_usuario inner join ordenes on ordenes.numero_op = consumo_planchas.numero_op where ordenes.numero_op = '$recorrer[op]' and (fecha_consumo between '$dia' and '$datetime_final') GROUP BY ordenes.numero_op  order by id_consumo desc");
+									while($datos = mysqli_fetch_array($registros)) {
+										$fecha_consumo = $datos['fecha_consumo'];
+										$mes_consumo 			= date("m",strtotime($fecha_consumo));
+										$dia_consumo 			= date("d",strtotime($fecha_consumo));
+										$year_consumo 			= date("Y",strtotime($fecha_consumo));
+										$hora_consumo 			= date("H:i:s",strtotime($fecha_consumo));
 							?>
 
 							<tr class="Detalles">
@@ -273,7 +273,7 @@
 							</tr>
 
 						<?php
-								}
+									}
 									}
 								}
 							?>
