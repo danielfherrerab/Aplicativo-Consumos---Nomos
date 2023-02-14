@@ -165,3 +165,12 @@ function traerinfo(id){
 			Final.setAttribute('max',Inicial.value)
 	})
 }
+
+/* PARA TRAER INFO ORDEN */
+function traerOrden(op) {
+	op = op.replace(/\bop\b/g, "");
+	var orden = document.getElementById("op"+op).value;
+	var nombre_trabajo = document.getElementById("trabajo"+op).value;
+	$('textarea[name=nombre_trabajo').val(nombre_trabajo);
+	$('input[name=busqueda_OP').val(orden);
+}
