@@ -83,7 +83,7 @@
 								<input type="hidden" name="id_articulo" id="articulo">
 								<input type="hidden" name="id_usuario"  id="id_usuario" value="<?php echo $id_usuario; ?>">
 								Busque una orden *: 
-								<input type="text" name="busqueda_OP" id="busqueda_OP" placeholder="Buscar..." onkeyup="llenarOrden(this.value)" autocomplete="off" required><br>
+								<input type="text" name="busqueda_OP" id="busqueda_OP" placeholder="Buscar..." autocomplete="off" required><br>
 								Nombre del trabajo: <br>
 								<textarea type="text" name="nombre_trabajo" id="nombre_trabajo" placeholder="Nombre del trabajo" readonly required class="readonly"></textarea>
 							</div>
