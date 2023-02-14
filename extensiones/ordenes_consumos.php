@@ -30,7 +30,7 @@
 			<?php
 				while ($fila = mysqli_fetch_array($consulta)) {
 			?>
-			<tr onclick="traerOrden(this.id)" id="<?php echo $fila["numero_op"]; ?>">
+			<tr onclick="traerOrden(this.id)" id="op<?php echo $fila["numero_op"]; ?>">
 				<td>
 					<?php echo $fila['numero_op']; ?>
 					<input type="hidden" value="<?php echo $fila['numero_op']; ?>" id="op<?php echo $fila['numero_op']; ?>">
@@ -93,8 +93,9 @@
 		
 <script>
 	function traerOrden(op) {
+		op = op.replace(/\bop\b/g, "");
 		var orden = document.getElementById("op"+op).value;
-		var nombre_trabajo = document.getElementById("nombre_trabajo"+op).value;
+		var nombre_trabajo = document.getElementById("trabajo"+op).value;
 		$('textarea[name=nombre_trabajo').val(nombre_trabajo);
 		$('input[name=busqueda_OP').val(orden);
 	}
