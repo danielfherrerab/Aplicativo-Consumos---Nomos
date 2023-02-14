@@ -19,8 +19,8 @@ $(document).on('keyup', '#busqueda_OP', function()
 	var valorBusqueda=$(this).val();
 	if (valorBusqueda!=""){
 		obtener_ordenes(valorBusqueda);
-		var nombre_trabajo = document.getElementById("nombre_trabajo"+valorBusqueda).value;
-		$('textarea[name=nombre_trabajo').val(nombre_trabajo);
+		var trabajo = document.getElementById("trabajo"+valorBusqueda).value;
+		$('textarea[name=trabajo').val(trabajo);
 	}
 	else{
 		obtener_ordenes();

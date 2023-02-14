@@ -37,7 +37,7 @@
 				</td>
 				<td align="left">
 					<?php echo $fila['nombre_trabajo']; ?>
-					<input type="hidden" value="<?php echo $fila['nombre_trabajo']; ?>" id="nombre_trabajo<?php echo $fila['numero_op']; ?>">
+					<input type="hidden" value="<?php echo $fila['nombre_trabajo']; ?>" id="trabajo<?php echo $fila['numero_op']; ?>">
 				</td>
 			</tr>
 			<?php
@@ -92,11 +92,6 @@
 ?>
 		
 <script>
-	function llenarOrden(orden) {
-		var nombre_trabajo = document.getElementById("nombre_trabajo"+orden).value;
-		$('textarea[name=nombre_trabajo').val(nombre_trabajo);
-	}
-
 	function traerOrden(op) {
 		var orden = document.getElementById("op"+op).value;
 		var nombre_trabajo = document.getElementById("nombre_trabajo"+op).value;
