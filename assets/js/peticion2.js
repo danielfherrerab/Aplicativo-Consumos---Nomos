@@ -20,6 +20,7 @@ $(document).on('keyup', '#busqueda_OP', function()
 	if (valorBusqueda!=""){
 		obtener_ordenes(valorBusqueda);
 		var trabajo = document.getElementById("trabajo"+valorBusqueda).value;
+		console.log(trabajo+valorBusqueda);
 		$('textarea[name=trabajo').val(trabajo);
 	}
 	else{

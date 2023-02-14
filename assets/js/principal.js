@@ -170,6 +170,7 @@ function traerinfo(id){
 function traerOrden(op) {
 	op = op.replace(/\bop\b/g, "");
 	var orden = document.getElementById("op"+op).value;
+	console.log(op+orden);
 	var nombre_trabajo = document.getElementById("trabajo"+op).value;
 	$('textarea[name=nombre_trabajo').val(nombre_trabajo);
 	$('input[name=busqueda_OP').val(orden);
