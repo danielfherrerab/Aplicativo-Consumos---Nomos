@@ -94,7 +94,6 @@
 <script>
 	function llenarOrden(orden) {
 		var nombre_trabajo = document.getElementById("nombre_trabajo"+orden).value;
-		var buscador = document.getElementById("op"+orden).value;
 		$('textarea[name=nombre_trabajo').val(nombre_trabajo);
 	}
 
