@@ -18,7 +18,11 @@ $(document).on('keyup', '#busqueda_OP', function(){
 	var valorBusqueda=$(this).val();
 	console.log(valorBusqueda);
 	if (valorBusqueda!=""){
-		obtener_ordenes(valorBusqueda);
+		setTimeout(function () {
+			obtener_ordenes(valorBusqueda);
+		}, 0 | Math.random() * 100);
+		var name = $('#trabajo'+trabajo);
+		$('textarea[name=trabajo').val(trabajo);
 	}
 	else{
 		obtener_ordenes();
