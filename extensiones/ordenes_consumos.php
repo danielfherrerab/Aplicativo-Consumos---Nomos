@@ -92,6 +92,6 @@
 ?>
 
 <script>
-	var trabajo = document.getElementById("trabajo"+valorBusqueda).value;
+	var trabajo = '<?php echo $parametro; ?>';
 	$('textarea[name=trabajo').val(trabajo);
 </script>
