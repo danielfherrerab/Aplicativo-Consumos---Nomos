@@ -17,10 +17,11 @@ function obtener_ordenes(ordenes)
 $(document).on('keyup', '#busqueda_OP', function()
 {
 	var valorBusqueda=$(this).val();
+	console.log(valorBusqueda);
 	if (valorBusqueda!=""){
 		obtener_ordenes(valorBusqueda);
 		var trabajo = document.getElementById("trabajo"+valorBusqueda).value;
-		console.log(trabajo+valorBusqueda);
+		
 		$('textarea[name=trabajo').val(trabajo);
 	}
 	else{
