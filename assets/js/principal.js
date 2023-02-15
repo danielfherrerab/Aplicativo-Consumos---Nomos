@@ -168,7 +168,7 @@ function traerinfo(id){
 
 /* PARA TRAER INFO ORDEN */
 function traerOrden(op) {
-	op = op.replace(/\bop\b/g, "");console.log(op);
+	op = op.replace('op', '');;console.log(op);
 	
 	var nombre_trabajo = document.getElementById("trabajo"+op).value;
 	$('textarea[name=nombre_trabajo').val(nombre_trabajo);
