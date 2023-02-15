@@ -21,20 +21,15 @@ $(document).on('keyup', '#busqueda_OP', function(){
 	var valorBusqueda=$(this).val();
 	console.log(valorBusqueda);
 	if (valorBusqueda!=""){
-		obtener_ordenes(valorBusqueda).then(function() {
+		obtener_ordenes(valorBusqueda);
+		setTimeout(function(){
 			var name = $('#trabajo'+valorBusqueda).val();
 			$('#nombre_trabajo').val(name);
 			console.log(name);
-		}).catch(function(error) {
-			console.log('Error al obtener las órdenes: ' + error);
-		});
+		},500);
 	}
 	else{
-		obtener_ordenes().then(function() {
-			// Continuar con el código aquí
-		}).catch(function(error) {
-			console.log('Error al obtener las órdenes: ' + error);
-		});
+		obtener_ordenes();
 	}
 });
 
