@@ -97,7 +97,7 @@
 		console.log(valorBusqueda);
 		if (valorBusqueda!=""){
 			var name = $('#trabajo'+valorBusqueda).val();
-			$('textarea[name=trabajo]').val(name);
+			$('#nombre_trabajo').val(name);
 			console.log(name);
 		}
 	});
