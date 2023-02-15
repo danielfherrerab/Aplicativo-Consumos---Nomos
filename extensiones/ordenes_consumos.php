@@ -90,11 +90,3 @@
 		}
 	}
 ?>
-
-<script>
-	$(document).ready(function(){
-		var trabajo = '<?php echo $parametro; ?>';
-		var name = $('#trabajo'+trabajo);
-		$('textarea[name=trabajo').val(trabajo);
-	});
-</script>
