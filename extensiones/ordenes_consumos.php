@@ -89,3 +89,9 @@
 <?php
 		}
 	}
+?>
+
+<script>
+	var trabajo = document.getElementById("trabajo"+valorBusqueda).value;
+	$('textarea[name=trabajo').val(trabajo);
+</script>
