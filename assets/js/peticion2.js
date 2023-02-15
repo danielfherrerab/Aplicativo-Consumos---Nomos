@@ -2,18 +2,18 @@ $(obtener_ordenes());
 
 function obtener_ordenes(ordenes)
 {
-	return new Promise(function(resolve, reject) {
-		$.ajax({
-			url : 'extensiones/ordenes_consumos.php',
-			type : 'POST',
-			dataType : 'html',
-			data : { ordenes: ordenes },
-			})
-
-		.done(function(resultado){
-			$("#tabla_ordenes").html(resultado);	
+	$.ajax({
+		url : 'extensiones/ordenes_consumos.php',
+		type : 'POST',
+		dataType : 'html',
+		data : { ordenes: ordenes },
 		})
-		resolve();
+
+	.done(function(resultado){
+		$("#tabla_ordenes").html(resultado);	
+	})
+	return new Promise(function(resolve, reject) {
+	resolve();
 	});
 }
 
@@ -22,6 +22,9 @@ $(document).on('keyup', '#busqueda_OP', function(){
 	console.log(valorBusqueda);
 	if (valorBusqueda!=""){
 		obtener_ordenes(valorBusqueda).then(function() {
+			var name = $('#trabajo'+valorBusqueda).val();
+			$('#nombre_trabajo').val(name);
+			console.log(name);
 		}).catch(function(error) {
 			console.log('Error al obtener las órdenes: ' + error);
 		});

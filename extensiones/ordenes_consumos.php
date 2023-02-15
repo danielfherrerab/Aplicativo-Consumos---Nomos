@@ -90,15 +90,3 @@
 		}
 	}
 ?>
-
-<script>
-	$(document).on('keyup', '#busqueda_OP', function(){
-		var valorBusqueda=$(this).val();
-		console.log(valorBusqueda);
-		if (valorBusqueda!=""){
-			var name = $('#trabajo'+valorBusqueda).val();
-			$('#nombre_trabajo').val(name);
-			console.log(name);
-		}
-	});
-</script>
