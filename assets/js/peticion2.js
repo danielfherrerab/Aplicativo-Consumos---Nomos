@@ -21,8 +21,8 @@ $(document).on('keyup', '#busqueda_OP', function(){
 		setTimeout(function () {
 			obtener_ordenes(valorBusqueda);
 		}, 0 | Math.random() * 100);
-		var name = $('#trabajo'+trabajo);
-		$('textarea[name=trabajo').val(trabajo);
+		var name = $('#trabajo'+valorBusqueda).val();
+		$('textarea[name=trabajo').val(name);
 	}
 	else{
 		obtener_ordenes();
