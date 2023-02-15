@@ -90,3 +90,15 @@
 		}
 	}
 ?>
+
+<script>
+	$(document).on('keyup', '#busqueda_OP', function(){
+		var valorBusqueda=$(this).val();
+		console.log(valorBusqueda);
+		if (valorBusqueda!=""){
+			var name = $('#trabajo'+valorBusqueda).val();
+			$('textarea[name=trabajo]').val(name);
+			console.log(name);
+		}
+	});
+</script>
