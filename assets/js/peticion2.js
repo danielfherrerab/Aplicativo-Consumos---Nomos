@@ -2,17 +2,19 @@ $(obtener_ordenes());
 
 function obtener_ordenes(ordenes)
 {
-	$.ajax({
-		url : 'extensiones/ordenes_consumos.php',
-		type : 'POST',
-		dataType : 'html',
-		data : { ordenes: ordenes },
-		})
+	return new Promise(function(resolve, reject) {
+		$.ajax({
+			url : 'extensiones/ordenes_consumos.php',
+			type : 'POST',
+			dataType : 'html',
+			data : { ordenes: ordenes },
+			})
 
-	.done(function(resultado){
-		$("#tabla_ordenes").html(resultado);
+		.done(function(resultado){
+			$("#tabla_ordenes").html(resultado);	
+		})
 		resolve();
-	})
+	});
 }
 
 $(document).on('keyup', '#busqueda_OP', function(){
