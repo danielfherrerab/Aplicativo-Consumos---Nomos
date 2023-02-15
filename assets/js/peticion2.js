@@ -11,6 +11,7 @@ function obtener_ordenes(ordenes)
 
 	.done(function(resultado){
 		$("#tabla_ordenes").html(resultado);
+		resolve();
 	})
 }
 
@@ -18,16 +19,23 @@ $(document).on('keyup', '#busqueda_OP', function(){
 	var valorBusqueda=$(this).val();
 	console.log(valorBusqueda);
 	if (valorBusqueda!=""){
-		setTimeout(function () {
-			obtener_ordenes(valorBusqueda);
-		}, 0 | Math.random() * 100);
-		var name = $('#trabajo'+valorBusqueda).val();
-		$('textarea[name=trabajo').val(name);
+		obtener_ordenes(valorBusqueda).then(function() {
+			var name = $('#trabajo'+trabajo);
+			$('textarea[name=trabajo]').val(trabajo);
+			// Continuar con el código aquí
+		}).catch(function(error) {
+			console.log('Error al obtener las órdenes: ' + error);
+		});
 	}
 	else{
-		obtener_ordenes();
+		obtener_ordenes().then(function() {
+			// Continuar con el código aquí
+		}).catch(function(error) {
+			console.log('Error al obtener las órdenes: ' + error);
+		});
 	}
 });
+
 
 
 /* PARA CONSUMOS (DESDE HASTA)*/
