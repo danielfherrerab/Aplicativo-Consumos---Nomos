@@ -92,6 +92,8 @@
 ?>
 
 <script>
-	var trabajo = '<?php echo $parametro; ?>';
-	$('textarea[name=trabajo').val(trabajo);
+	$(document).ready(function(){
+		var trabajo = '<?php echo $fila['nombre_trabajo']; ?>';
+		$('textarea[name=trabajo').val(trabajo);
+	});
 </script>
