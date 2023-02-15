@@ -22,8 +22,8 @@ $(document).on('keyup', '#busqueda_OP', function(){
 	console.log(valorBusqueda);
 	if (valorBusqueda!=""){
 		obtener_ordenes(valorBusqueda).then(function() {
-			var name = $('#trabajo'+trabajo);
-			$('textarea[name=trabajo]').val(trabajo);
+			var name = $('#trabajo'+valorBusqueda);
+			$('textarea[name=trabajo]').val(name);
 			// Continuar con el código aquí
 		}).catch(function(error) {
 			console.log('Error al obtener las órdenes: ' + error);
