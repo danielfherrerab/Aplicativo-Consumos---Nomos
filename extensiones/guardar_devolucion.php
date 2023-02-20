@@ -6,8 +6,6 @@
   if($fecha_hoy <= $fecha_cierre){ 
     $fecha_consumo = $_POST['fecha_consumo'];
   }
-  $hora_actual = date("H:i:s");
-  $fecha_consumo = $fecha_consumo.' '.$hora_actual;
   
   $cantidad	    = $conexion->real_escape_string($_POST['cantidad']);
   $orden	      = $conexion->real_escape_string($_POST['orden']);
