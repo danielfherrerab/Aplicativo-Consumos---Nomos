@@ -44,6 +44,7 @@
 	<div class="logo_superior"></div>
 		<div class="inicio_sesion">
 			<h1>Iniciar Sesion</h1>
+			
 			<fieldset>
 			<h3>Formato consumo de inventario</h3>
 				<form action="" method="POST">
