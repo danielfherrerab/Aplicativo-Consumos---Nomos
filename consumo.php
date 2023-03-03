@@ -236,7 +236,7 @@
 						<tbody>
 							<?php
 							$a = 0;
-								$ordenes = mysqli_query($conexion,"SELECT distinct(numero_op) from consumo_planchas where (fecha_consumo between '$dia' and '$datetime_final') ");
+								$ordenes = mysqli_query($conexion,"SELECT numero_op from consumo_planchas where (fecha_consumo between '$dia' and '$datetime_final') group by numero_op");
 								while($linea = mysqli_fetch_array($ordenes)) {
 									$consumos = mysqli_query($conexion, "SELECT id_consumo, ordenes.numero_op as op, nombre_trabajo, descripcion, fecha_consumo, observacion, SUM(cantidad) as cantidad FROM consumo_planchas INNER JOIN ordenes ON ordenes.numero_op = consumo_planchas.numero_op WHERE ordenes.numero_op = '$linea[numero_op]' AND (fecha_consumo BETWEEN '$dia' AND '$datetime_final') ORDER BY id_consumo DESC");
 									$cant_total = 0;
