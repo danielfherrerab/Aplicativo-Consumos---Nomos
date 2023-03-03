@@ -26,7 +26,7 @@ $(document).on('keyup', '#busqueda_OP', function(){
 			var name = $('#trabajo'+valorBusqueda).val();
 			$('#nombre_trabajo').val(name);
 			console.log(name);
-		},250);
+		},400);
 	}
 	else{
 		obtener_ordenes();
